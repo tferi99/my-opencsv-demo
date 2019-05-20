@@ -1,4 +1,4 @@
-package org.ftoth.opencvsdemo.model;
+package org.ftoth.opencsvdemo.model;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
@@ -13,7 +13,7 @@ public class EmployeeNamedAndPositioned implements Employee
 	@CsvBindByPosition(position = 0)
 	private String id;
 
-	@CsvBindByName(column = "Name", required = false)
+	@CsvBindByName(column = "Full Name", required = true)
 	@CsvBindByPosition(position = 1)
 	private String name;
 
@@ -21,21 +21,21 @@ public class EmployeeNamedAndPositioned implements Employee
 	@CsvBindByPosition(position = 2)
 	private String age;
 
-	@CsvBindByName(column = "Country", required = true)
+	@CsvBindByName(column = "Country/Location", required = true)
 	@CsvBindByPosition(position = 3)
 	private String country;
 
-	@CsvBindByName(column = "Birth", required = true)
+	@CsvBindByName(column = "Salary", required = true)
 	@CsvBindByPosition(position = 4)
+	private double salary;
+
+	@CsvBindByName(column = "Birth Date", required = true)
+	@CsvBindByPosition(position = 5)
 	@CsvDate("yyyy-MM-dd")
 	private Date birth;
 
-	@CsvBindByName(column = "Salary", required = true)
-	@CsvBindByPosition(position = 5)
-	@CsvNumber("#.###€")
-	private int salary;
 
-	@CsvBindByName(column = "Active", required = true)
+	@CsvBindByName(column = "Is Active", required = true)
 	@CsvBindByPosition(position = 6)
 	private boolean active;
 
@@ -81,12 +81,12 @@ public class EmployeeNamedAndPositioned implements Employee
 		this.birth = birth;
 	}
 
-	public int getSalary()
+	public double getSalary()
 	{
 		return salary;
 	}
 
-	public void setSalary(int salary)
+	public void setSalary(double salary)
 	{
 		this.salary = salary;
 	}

@@ -1,4 +1,4 @@
-package org.ftoth.opencvsdemo.model;
+package org.ftoth.opencsvdemo.model;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
@@ -11,24 +11,23 @@ public class EmployeeNamed implements Employee
 	@CsvBindByName(column = "ID", required = true)
 	private String id;
 
-	@CsvBindByName(column = "Name", required = true)
+	@CsvBindByName(column = "Full Name", required = true)
 	private String name;
 
 	@CsvBindByName(column = "Age", required = true)
 	private String age;
 
-	@CsvBindByName(column = "Country", required = true)
+	@CsvBindByName(column = "Country/Location", required = true)
 	private String country;
 
-	@CsvBindByName(column = "Birth", required = true)
+	@CsvBindByName(column = "Salary", required = true)
+	private double salary;
+
+	@CsvBindByName(column = "Birth Date", required = true)
 	@CsvDate("yyyy-MM-dd")
 	private Date birth;
 
-	@CsvBindByName(column = "Salary", required = true)
-	@CsvNumber("#.###€")
-	private int salary;
-
-	@CsvBindByName(column = "Active", required = true)
+	@CsvBindByName(column = "Is Active", required = true)
 	private boolean active;
 
 	public String getId() {
@@ -73,12 +72,12 @@ public class EmployeeNamed implements Employee
 		this.birth = birth;
 	}
 
-	public int getSalary()
+	public double getSalary()
 	{
 		return salary;
 	}
 
-	public void setSalary(int salary)
+	public void setSalary(double salary)
 	{
 		this.salary = salary;
 	}

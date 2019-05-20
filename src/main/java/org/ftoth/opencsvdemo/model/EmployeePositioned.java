@@ -1,4 +1,4 @@
-package org.ftoth.opencvsdemo.model;
+package org.ftoth.opencsvdemo.model;
 
 import com.opencsv.bean.CsvBindByPosition;
 import com.opencsv.bean.CsvDate;
@@ -21,12 +21,11 @@ public class EmployeePositioned implements Employee
 	private String country;
 
 	@CsvBindByPosition(position = 4)
-	@CsvDate("yyyy-MM-dd")
-	private Date birth;
+	private double salary;
 
 	@CsvBindByPosition(position = 5)
-	@CsvNumber("#.###€")
-	private int salary;
+	@CsvDate("yyyy-MM-dd")
+	private Date birth;
 
 	@CsvBindByPosition(position = 6)
 	private boolean active;
@@ -73,12 +72,12 @@ public class EmployeePositioned implements Employee
 		this.birth = birth;
 	}
 
-	public int getSalary()
+	public double getSalary()
 	{
 		return salary;
 	}
 
-	public void setSalary(int salary)
+	public void setSalary(double salary)
 	{
 		this.salary = salary;
 	}

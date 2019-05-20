@@ -1,4 +1,7 @@
-package org.ftoth.opencvsdemo.model;
+package org.ftoth.opencsvdemo.model;
+
+import com.opencsv.bean.CsvDate;
+import com.opencsv.bean.CsvNumber;
 
 import java.util.Date;
 
@@ -9,9 +12,10 @@ public class EmployeeSimple implements Employee
 	private String age;
 	private String country;
 	private Date birth;
-	private String birthStr;
-	private int salary;
+	private double salary;
 	private boolean active;
+
+	private String birthStr;
 
 	public String getId() {
 		return id;
@@ -55,12 +59,12 @@ public class EmployeeSimple implements Employee
 		this.birth = birth;
 	}
 
-	public int getSalary()
+	public double getSalary()
 	{
 		return salary;
 	}
 
-	public void setSalary(int salary)
+	public void setSalary(double salary)
 	{
 		this.salary = salary;
 	}

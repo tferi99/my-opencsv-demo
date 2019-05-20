@@ -1,4 +1,4 @@
-package org.ftoth.opencvsdemo.read;
+package org.ftoth.opencsvdemo.read;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
