@@ -1,4 +1,4 @@
-package org.ftoth.opencvsdemo.model;
+package org.ftoth.opencsvdemo.model;
 
 import java.util.Date;
 
@@ -19,8 +19,8 @@ public interface Employee
 	Date getBirth();
 	void setBirth(Date birth);
 
-	int getSalary();
-	void setSalary(int salary);
+	double getSalary();
+	void setSalary(double salary);
 
 	boolean isActive();
 	void setActive(boolean active);
