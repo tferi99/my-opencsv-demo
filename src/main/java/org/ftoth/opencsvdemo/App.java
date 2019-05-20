@@ -88,7 +88,7 @@ public class App
 			HeaderColumnNameMappingStrategy<EmployeeNamedAndPositioned> strategy = new HeaderColumnNameMappingStrategy<EmployeeNamedAndPositioned>();
 			strategy.setType(EmployeeNamedAndPositioned.class);
 			strategy.captureHeader(rd2csv);
-			//strategy.setColumnOrderOnWrite(new EmployeeHeaderNameComparator());
+			//strategy.setColumnOrderOnWrite(new EmployeeHeaderNameComparator());		// you don't need it, order comes from captured header
 			Writer writer = new FileWriter("out-withColumn.csv");
 			StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(writer)
 					.withApplyQuotesToAll(false)
