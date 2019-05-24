@@ -2,7 +2,6 @@ package org.ftoth.opencsvdemo.model;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
-import com.opencsv.bean.CsvNumber;
 
 import java.util.Date;
 
