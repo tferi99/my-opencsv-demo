@@ -36,6 +36,7 @@ public class App
 		posMapSt.setType(EmployeePositioned.class);*/
 
 		System.out.println("----------------------------- without header --------------------------------");
+		// read
 		String file = "emp.csv";
 		Reader rd = new FileReader(file);
 		List beans = new CsvToBeanBuilder(rd)
@@ -52,6 +53,7 @@ public class App
 			e.printStackTrace();
 		}
 
+		// write
 		// List<MyBean> beans comes from somewhere earlier in your code.
 		try {
 			Writer writer = new FileWriter("out.csv");
@@ -65,6 +67,7 @@ public class App
 		}
 
 		System.out.println("\n----------------------------- with header --------------------------------");
+		// read
 		List beans2 = null;
 		try {
 			String file2 = "emp-withColumn.csv";
@@ -81,10 +84,11 @@ public class App
 			e.printStackTrace();
 		}
 
+		// write
 		try {
 			String file2 = "emp-withColumn.csv";
-			Reader rd2 = new FileReader(file2);
-			CSVReader rd2csv = new CSVReader(rd2);
+			Reader headerRd = new FileReader(file2);
+			CSVReader rd2csv = new CSVReader(headerRd);
 			HeaderColumnNameMappingStrategy<EmployeeNamedAndPositioned> strategy = new HeaderColumnNameMappingStrategy<EmployeeNamedAndPositioned>();
 			strategy.setType(EmployeeNamedAndPositioned.class);
 			strategy.captureHeader(rd2csv);
@@ -96,7 +100,7 @@ public class App
 					.build();
 			beanToCsv.write(beans2);
 			writer.close();
-			rd2.close();
+			headerRd.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
